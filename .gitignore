@@ -1,0 +1,24 @@
+# Compiled
+*.class
+
+# Log files
+*.log
+
+# Intellij IDEA
+.idea/
+.idea_modules/
+out/
+*.iml
+
+# Maven
+target/
+.classpath
+
+# Play! framework
+project/project
+project/target
+RUNNING_PID
+logs/
+tmp/
+dist/
+.cache/
