@@ -1,4 +1,4 @@
-val dottyVersion = "0.24.0-RC1"
+val dottyVersion = "0.27.0-RC1"
 
 lazy val root = project
   .in(file("."))
@@ -11,6 +11,6 @@ lazy val root = project
     resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots",
 
     libraryDependencies ++= Seq(
-      "org.scalatest" %% "scalatest" % "3.1.2" % "test"
+      "org.scalatest" %% "scalatest" % "3.2.2" % "test"
     )
   )

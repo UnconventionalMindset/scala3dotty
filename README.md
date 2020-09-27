@@ -1,4 +1,4 @@
-## Sample project using Scala 3
+## Sample project using Scala 3 compiler (Currently named Dotty)
 
 ### Usage
 
@@ -19,15 +19,15 @@ and finally, to run tests (not working):
 sbt test
 ```
 ### Tooling
-Dotty: `0.24.0-RC1`
+Dotty: `0.27.0-RC1`
 
-SBT `1.3.10`
+SBT `1.3.13`
 
-sbt-dotty `0.4.1`
+sbt-dotty `0.4.2`
 
-Tested using JVM 13
+Tested using JVM 13 & JVM 11
 
 ### Known issues
 1. When running `sbt test` Scalatest returns the following error:
 ```value shouldBe is not a member of Boolean```
-1. When running tests, the new quiet syntax does not seems to be recognised correctly.
+1. When running tests, the new quiet syntax does not seem to be recognised correctly.
