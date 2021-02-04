@@ -22,15 +22,17 @@ class MainTests
   it should "authenticate using the correct user email" in {
     Main.authenticate(Main.expectedUserEmail, expectedPassword) shouldBe true
   }
-  it should "not authenticate if only the user is incorrect" in {
-    Main.authenticate(UUID.randomUUID.asInstanceOf[UserId], expectedPassword) shouldBe false
+  it should "not authenticate if only the password is correct" in {
+    val id = UUID.fromString("a76807ce-2011-45a3-89b1-d16afcdca28f").asInstanceOf[UserId]
+    Main.authenticate(id, expectedPassword) shouldBe false
     Main.authenticate("ciao".asInstanceOf[Email], expectedPassword) shouldBe false
   }
-  it should "not authenticate if only the password is incorrect" in {
+  it should "not authenticate if only the user is correct" in {
     Main.authenticate(Main.expectedUserEmail, "ciao".asInstanceOf[Password]) shouldBe false
   }
-  it should "not authenticate if both the user and password are incorrect" in {
-    Main.authenticate(UUID.randomUUID.asInstanceOf[UserId], "ciao".asInstanceOf[Password]) shouldBe false
+  it should "not authenticate if the data is incorrect" in {
+    val id = UUID.fromString("a76807ce-2011-45a3-89b1-d16afcdca28f").asInstanceOf[UserId]
+    Main.authenticate(id, "ciao".asInstanceOf[Password]) shouldBe false
     Main.authenticate("ciao".asInstanceOf[Email], "ciao".asInstanceOf[Password]) shouldBe false
   }
 }
