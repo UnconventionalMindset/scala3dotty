@@ -1,4 +1,4 @@
-## Sample project using Scala 3 compiler (Currently named Dotty)
+## Sample project using Scala 3 compiler
 
 ### Usage
 
@@ -6,28 +6,27 @@ This is a normal sbt project, you can compile it with
 ```
 sbt compile
 ```
-and run it with
+and run it with (do NOT use Intellij for now)
 ```
 sbt run
 ```
-to start a Dotty REPL, use:
+to start a Scala 3 REPL, use:
 ```
 sbt console
 ``` 
-and finally, to run tests (not working):
+and finally, to run tests:
 ```
 sbt test
 ```
 ### Tooling
-Dotty: `0.27.0-RC1`
+Scala Version: `3.0.0-M3`
 
-SBT `1.3.13`
+SBT `1.4.7`
 
-sbt-dotty `0.4.2`
+sbt-dotty `0.5.2`
 
-Tested using JVM 13 & JVM 11
+Tested using JVM 11
 
 ### Known issues
-1. When running `sbt test` Scalatest returns the following error:
-```value shouldBe is not a member of Boolean```
 1. When running tests, the new quiet syntax does not seem to be recognised correctly.
+1. SBT actions do not work on intellij, but do work in SBT when used from CLI.

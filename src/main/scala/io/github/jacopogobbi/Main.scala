@@ -8,11 +8,11 @@ import scala.io.StdIn
 // https://dotty.epfl.ch/docs/reference/other-new-features/control-syntax
 object Main {
   // Opaque types: https://dotty.epfl.ch/docs/reference/other-new-features/opaques-details.html
-  opaque type UserID = UUID
+  opaque type UserId = UUID
   opaque type Email = String
   opaque type Password = String
   val expectedUserEmail: Email = "ciao@email.com"
-  val expectedUserId: UserID = UUID.fromString("8d7bd8b3-2f9d-4e77-8ddd-c60be4ab955e")
+  val expectedUserId: UserId = UUID.fromString("8d7bd8b3-2f9d-4e77-8ddd-c60be4ab955e")
   val expectedPassword: Password = "secret"
 
   // Main method: https://dotty.epfl.ch/docs/reference/changed-features/main-functions.html
@@ -25,7 +25,7 @@ object Main {
     do ()
 
   // Union types: https://dotty.epfl.ch/docs/reference/new-types/union-types.html
-  def getUserData: (Email | UserID, Password) =
+  def getUserData: (Email | UserId, Password) =
     println("Insert your username or email:\n")
     val emailOrUser: String = StdIn.readLine()
     println("Insert your password:\n")
@@ -33,11 +33,11 @@ object Main {
     (emailOrUser, password)
 
   // Union types: https://dotty.epfl.ch/docs/reference/new-types/union-types.html
-  def authenticate(emailOrId: Email | UserID, password: Password): Boolean = {
+  def authenticate(emailOrId: Email | UserId, password: Password): Boolean = {
     val username: Option[String] = emailOrId match
       case email: Email if email == expectedUserEmail =>
         Some(email.toString)
-      case id: UserID if id == expectedUserId =>
+      case id: UserId if id == expectedUserId =>
         Some(id.toString)
       case _ =>
         None

@@ -22,3 +22,6 @@ logs/
 tmp/
 dist/
 .cache/
+
+# SBT
+.bsp/
