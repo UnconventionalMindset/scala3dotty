@@ -16,20 +16,20 @@ object Main:
   val expectedPassword: Password = "secret"
 
   // Main method: https://dotty.epfl.ch/docs/reference/changed-features/main-functions.html
-  @main def start(): Unit =
+  @main def start: Unit =
     println("\nAuthentication example with Scala 3 (Dotty). Starting authentication...")
     // Dropped do-while: https://dotty.epfl.ch/docs/reference/dropped-features/do-while.html
     while
-      val dataTuple = getUserData
-      !authenticate(dataTuple._1, dataTuple._2)
+      val (emailOrUser, password) = getUserData
+      !authenticate(emailOrUser, password)
     do ()
 
   // Union types: https://dotty.epfl.ch/docs/reference/new-types/union-types.html
   def getUserData: (Email | UserId, Password) =
     println("Insert your username or email:\n")
-    val emailOrUser: String = StdIn.readLine()
+    val emailOrUser: String = StdIn.readLine
     println("Insert your password:\n")
-    val password: String = StdIn.readLine()
+    val password: String = StdIn.readLine
     (emailOrUser, password)
 
   // Union types: https://dotty.epfl.ch/docs/reference/new-types/union-types.html
@@ -42,7 +42,8 @@ object Main:
       case _ =>
         None
 
-    val isAuthenticated = password == expectedPassword && username.isDefined
+    val isAuthenticated =
+      username.isDefined && password == expectedPassword
 
     if (!isAuthenticated)
     then println("Authentication was not successful.")
