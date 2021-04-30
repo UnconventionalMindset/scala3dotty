@@ -6,7 +6,7 @@ import scala.io.StdIn
 
 // Significant whitespaces, quiet syntax:
 // https://dotty.epfl.ch/docs/reference/other-new-features/control-syntax
-object Main {
+object Main:
   // Opaque types: https://dotty.epfl.ch/docs/reference/other-new-features/opaques-details.html
   opaque type UserId = UUID
   opaque type Email = String
@@ -33,7 +33,7 @@ object Main {
     (emailOrUser, password)
 
   // Union types: https://dotty.epfl.ch/docs/reference/new-types/union-types.html
-  def authenticate(emailOrId: Email | UserId, password: Password): Boolean = {
+  def authenticate(emailOrId: Email | UserId, password: Password): Boolean =
     val username: Option[String] = emailOrId match
       case email: Email if email == expectedUserEmail =>
         Some(email.toString)
@@ -43,12 +43,9 @@ object Main {
         None
 
     val isAuthenticated = password == expectedPassword && username.isDefined
-    if (!isAuthenticated)
-      println("Authentication was not successful.")
-    else
-      println(s"Authentication successful, welcome $username")
 
+    if (!isAuthenticated)
+    then println("Authentication was not successful.")
+    else println(s"Authentication successful, welcome $username")
 
     isAuthenticated
-  }
-}

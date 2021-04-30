@@ -13,7 +13,7 @@ import java.util.UUID
 class MainTests
   extends AnyFlatSpec
     with ParallelTestExecution
-    with Matchers {
+    with Matchers:
   val password = "secret"
   behavior of("Main.authenticate")
   it should "authenticate using the correct user ID" in {
@@ -35,4 +35,3 @@ class MainTests
     Main.authenticate(id, "ciao".asInstanceOf[Password]) shouldBe false
     Main.authenticate("ciao".asInstanceOf[Email], "ciao".asInstanceOf[Password]) shouldBe false
   }
-}

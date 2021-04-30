@@ -6,7 +6,7 @@ This is a normal sbt project, you can compile it with
 ```
 sbt compile
 ```
-and run it with (do NOT use Intellij for now)
+and run it with
 ```
 sbt run
 ```
@@ -19,14 +19,10 @@ and finally, to run tests:
 sbt test
 ```
 ### Tooling
-Scala Version: `3.0.0-M3`
+Scala Version: `3.0.0-RC3`
 
-SBT `1.4.7`
+SBT `1.5.1`
 
-sbt-dotty `0.5.2`
+sbt-dotty `0.5.5`
 
 Tested using JVM 11
-
-### Known issues
-1. When running tests, the new quiet syntax does not seem to be recognised correctly.
-1. SBT actions do not work on intellij, but do work in SBT when used from CLI.
