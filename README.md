@@ -19,10 +19,8 @@ and finally, to run tests:
 sbt test
 ```
 ### Tooling
-Scala Version: `3.0.0-RC3`
+Scala Version: `3.0.0`
 
 SBT `1.5.3`
-
-sbt-dotty `0.5.5`
 
 Tested using JVM 11
