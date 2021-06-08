@@ -21,7 +21,7 @@ sbt test
 ### Tooling
 Scala Version: `3.0.0-RC3`
 
-SBT `1.5.1`
+SBT `1.5.3`
 
 sbt-dotty `0.5.5`
 
