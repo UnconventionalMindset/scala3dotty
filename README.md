@@ -23,4 +23,4 @@ Scala Version: `3.2.1-RC1-bin-20220716-bb9c8ff-NIGHTLY`
 
 SBT `1.6.2`
 
-Tested using JVM 17
+Tested using JVM `17`
